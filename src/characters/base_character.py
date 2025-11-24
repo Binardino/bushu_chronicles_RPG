@@ -6,6 +6,9 @@ class BaseCharacter:
         self.stats    = stats
         self.level    = level
         self.elements = elements #elemental affinities
+        self._current_hp = stats.max_hp 
+        self.is_alive = True
+        
 
     def __str__(self):
         class_name = type(self).__name__
