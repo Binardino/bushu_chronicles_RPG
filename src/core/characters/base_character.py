@@ -1,13 +1,14 @@
-from ..core import Stats
-
 class BaseCharacter:
-    def __init__(self, name, stats, level, elements):
-        self.name     = name
-        self.stats    = stats
-        self.level    = level
-        self.elements = elements #elemental affinities
-        self._current_hp = stats.max_hp 
-        self.is_alive = True
+    def __init__(self, name: str, level: int, stats, element_profile, category_profile = None, radical_profile = None):
+        self.name               = name
+        self.stats              = stats
+        self.level              = level
+
+        self.element_profile    = element_profile  #elemental affinities
+        self.category_profile   = category_profile
+        self.radical_profile    = radical_profile
+        
+        self.current_hp        = stats.max_hp 
         
 
     def __str__(self):
