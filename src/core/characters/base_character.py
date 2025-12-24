@@ -14,6 +14,14 @@ class BaseCharacter:
     def __str__(self):
         class_name = type(self).__name__
         return f"{class_name} - Name : {self.name}, Level : {self.level} - Stats : {self.stats}"
+        
+    # ----------- Life Method  ------------------        
+    def is_alive(self) -> bool:
+        """Return True if HP > 0"""
+
+        return self.current_hp > 0
+    
+    # ----------- Combat Methods ----------------
     def take_damage(self, damage_amount:int):
 
         self.stats.hp = max(0, self.stats.hp - damage_amount)
