@@ -24,9 +24,19 @@ class BaseCharacter:
     # ----------- Combat Methods ----------------
     def take_damage(self, damage_amount:int):
 
-        self.stats.hp = max(0, self.stats.hp - damage_amount)
-        print(f"💥 {self.name} took {damage_amount} damage! HP: {self.hp}/{self.max_hp}")
+        self.current_hp = max(0, self.current_hp - damage_amount)
+        
+        print(f"💥 {self.name} took {damage_amount} damage! 
+              HP: {self.current_hp}/{self.stats.max_hp}")
+        
         if not self.is_alive:
             print(f"💀 {self.name} has been defeated!")
 
-        return self.stats.hp
+        return self.current_hp
+
+    def heal(self, heal_amount : int):
+        self.current_hp = min(self.max_hp, self.current_hp + heal_amount)
+
+        print(f"✨ {self.name} healed {heal_amount} HP "
+              f"(HP {self.current_hp}/{self.stats.max_hp})")    
+    
