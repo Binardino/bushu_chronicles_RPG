@@ -20,3 +20,8 @@ class Element(Enum):
     POISON  = auto() # 疒 - 毒
     VOID    = auto() #空
     SPIRIT  = auto() #心
+
+
+feu = Element.FIRE
+
+glace = Element.ICE
