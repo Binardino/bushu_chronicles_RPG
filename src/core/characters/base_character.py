@@ -1,3 +1,5 @@
+from core.stats.stats import Stats
+
 class BaseCharacter:
     def __init__(self, name: str, level: int, stats, element_profile, category_profile = None, radical_profile = None):
         self.name               = name
